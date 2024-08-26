@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="max-lg:overflow-y-auto overflow-hidden">
+   
+    <main class="flex max-lg:flex-wrap">
+        <section class="leftsec bg-[#9BE2DB3B] w-full  h-screen flex items-center ">
+            <form action="#" class="w-full h-fit p-6 flex flex-col gap-2">
+                <div>
+                <label for="task">Task Title*</label><br>
+                <input class="inputtitle rounded-md w-full h-[52px] p-3" type="text" name="" id="task" placeholder="Enter Task Title" >
+                </div>
+
+                <div>
+                <label for="taskdesc">Task Description*</label><br>
+                <textarea class="taskdescription rounded-md w-full h-24 p-3 resize-none" name="" id="taskdesc" placeholder=" description..."></textarea>
+                </div>
+
+                <div class="flex justify-between flex-wrap">
+                    <div >
+                        <label for="date">Date*</label><br>
+                        <input type="date" name="" id="date" class="w-60 h-[52px] rounded-md date">
+                    </div>
+                    <div >
+                        <label for="options">Priority</label><br>
+                        <select id="options" name="options" class="w-[245px]  h-[52px] rounded-md selectpriority">
+                            <option value="option1" >Low</option>
+                            <option value="option2">Medium</option>
+                            <option value="option3">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    Categories
+                    <div class="bg-white h-[52px] p-2 flex justify-between items-center rounded-md" >
+                     <div  class=" flex justify-between items-center chipContainer">
+                        <!-- dynamic chips added here-->
+                     </div>   
+                    <select name=""  class="w-60 bg-transparent selectCategory">
+                        <option value="" selected disabled>Select Category</option>
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Home">Home</option>
+                    </select>
+                    </div>
+                </div>
+
+                
+                <input class="mb-4 addbutton cursor-pointer rounded-md p-2 bg-black text-white w-[100%]" type="button" value="Add">
+            </form>
+        </section>
+        
+        <section class=" rightsec p-8  w-full">
+            <h1 class="mb-14 text-5xl font-medium ">Task Manager</h1>
+            <form action="#" class="w-full flex flex-col gap-2">
+                <div>
+                    <label for="task">Search</label><br>
+                    <input class="inputsearch border-2 rounded-md w-full h-[52px] p-3" type="text" name="" id="task" placeholder="Search from Title, description ...">
+                </div>
+
+                <div class="flex gap-2 max-lg:flex-wrap ">
+                    <div>
+                       Filter by Categories
+                    <div class="bg-white  h-[52px]  flex justify-between items-center rounded-md border-2">
+                            
+                        <div  class=" flex justify-between items-center ">
+                            <!-- dynamic chips added here-->
+                         </div>   
+                        <select name=""  class="w-40 bg-transparent ">
+                            <option value="" selected disabled>Select Category</option>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Home">Home</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div >
+                        <label for="options">Sort by priority</label><br>
+                        <select id="options" name="options" class="  h-[52px] rounded-md w-[20vw] border-2 sortoption">
+                            <option value="option1" >Low to High</option>
+                            <option value="option3">High to Low</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="options">Filter</label><br>
+                        <select id="options" name="options" class="  h-[52px] rounded-md w-[20vw] border-2 filtertask">
+                            <option value="option1" >Finished Tasks</option>
+                            <option value="option2">Unfinished Task</option>
+                        </select>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- cards -->
+             <div class="cardcontainer p-2 max-h-80 overflow-y-auto">
+                
+               
+             </div>
+   
+        </section>
+    </main>
+    <script src="dist/output.js"></script>
+</body>
+</html>
